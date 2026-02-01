@@ -1,0 +1,152 @@
+/* Cute Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Indie+Flower&family=Pacifico&family=Comic+Neue:wght@300;400;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fce4ec; /* Light pink background */
+    font-family: 'Indie Flower', cursive; /* Cute font */
+    overflow: hidden; /* Hide hearts outside the view initially */
+}
+
+.container {
+    text-align: center;
+    z-index: 10;
+}
+
+h1 {
+    color: #e91e63; /* Pink color for the question */
+    font-size: 2.8rem; /* Slightly larger */
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive; /* Romantic cursive font */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: gentleFloat 3s infinite ease-in-out;
+}
+
+@keyframes gentleFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.valentine-button {
+    padding: 12px 25px; /* Slightly larger padding */
+    font-size: 1.3rem;
+    color: white;
+    background-color: #ff4081; /* Accent pink color */
+    border: none;
+    border-radius: 25px; /* More rounded corners */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    font-family: 'Comic Neue', cursive; /* Fun, readable font */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.valentine-button:hover {
+    background-color: #e91e63;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.valentine-button:active {
+    transform: translateY(1px);
+}
+
+/* Heart Animation CSS */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4081;
+    transform: rotate(-45deg);
+    pointer-events: none; /* Allows clicks to pass through to elements below */
+    animation: fall linear forwards;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4081;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -10px;
+    left: 0;
+}
+
+.heart:after {
+    left: 10px;
+    top: 0;
+}
+
+#envelope {
+    position: relative;
+    background: white;
+    padding: 40px 35px 30px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    text-align: center;
+    z-index: 10;
+    width: fit-content;
+    max-width: 90vw;
+    border: 3px solid #ffb6c1; /* Light pink border */
+}
+
+.envelope-flap {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #ffccd5; /* Light pink */
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    border-top: 3px solid #ffb6c1;
+}
+
+.envelope-content h1 {
+    font-size: 2.2rem; /* Larger for better readability */
+    color: #e91e63;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.button-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+.back-button {
+    background-color: #ff6b8b !important;
+    color: white !important;
+    margin-top: 20px !important;
+    animation: pulse 2s infinite;
+    font-family: 'Comic Neue', cursive; /* Consistent font */
+    font-weight: 700;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* For any images/GIFs */
+img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
